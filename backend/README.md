@@ -143,3 +143,13 @@ sbt compile
 
 **Files:**
 - `app/repositories/PostgreSQLRepository.scala` - Slick-based PostgreSQL CRUD
+
+### Docker Build Added
+**Status:** ✅ SUCCESS
+```bash
+docker build -t air-quality-backend:test .
+# [+] Building 80.3s (13/13) FINISHED
+```
+
+**Files:**
+- `Dockerfile` - Multi-stage build (JDK builder → JRE runtime)

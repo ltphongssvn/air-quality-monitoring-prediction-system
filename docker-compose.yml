@@ -1,0 +1,51 @@
+# air-quality-monitoring-prediction-system/docker-compose.yml
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "9000:9000"
+    environment:
+      - PLAY_SECRET_KEY=${PLAY_SECRET_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - MONGODB_URI=${MONGODB_URI}
+      - OPENWEATHERMAP_API_KEY=${OPENWEATHERMAP_API_KEY}
+      - PURPLEAIR_API_KEY=${PURPLEAIR_API_KEY}
+      - EPA_AIRNOW_API_KEY=${EPA_AIRNOW_API_KEY}
+    depends_on:
+      - postgres
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=air_quality
+      - POSTGRES_USER=${DATABASE_USER:-postgres}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD:-postgres}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mongodb:
+    image: mongo:7
+    environment:
+      - MONGO_INITDB_DATABASE=air_quality
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  postgres_data:
+  mongodb_data:
