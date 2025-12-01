@@ -31,3 +31,17 @@ sbt compile
   - Kafka streaming input/output
   - 5-minute window aggregations
   - Env vars: KAFKA_BOOTSTRAP_SERVERS, KAFKA_INPUT_TOPIC, KAFKA_OUTPUT_TOPIC
+
+### AQIPredictionPipeline Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 7 s
+```
+
+**Files:**
+- `src/main/scala/ml/AQIPredictionPipeline.scala`
+  - RandomForest regression model
+  - Feature scaling, 80/20 train/test split
+  - RMSE/R2 evaluation metrics
+  - Env vars: TRAINING_DATA_PATH, MODEL_OUTPUT_PATH
