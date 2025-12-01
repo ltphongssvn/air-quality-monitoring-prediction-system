@@ -23,3 +23,16 @@ sbt compile
 - `app/models/AQIReading.scala` - AQI reading case class with JSON serialization
   - `AQIReading`: id, sensorId, location, aqi, pm25, pm10, o3, no2, co, timestamp
   - `Location`: latitude, longitude, city, country
+
+### AQIController Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 7 s
+```
+
+**Files:**
+- `app/controllers/AQIController.scala` - CRUD endpoints for AQI readings
+  - `getAll()` - GET /api/v1/aqi
+  - `getById(id)` - GET /api/v1/aqi/:id
+  - `create()` - POST /api/v1/aqi
