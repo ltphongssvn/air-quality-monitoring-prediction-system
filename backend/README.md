@@ -103,3 +103,13 @@ sbt compile
 
 **Files:**
 - `app/services/OpenWeatherMapService.scala` - Weather and air pollution data
+
+### PurpleAirService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 12 s
+```
+
+**Files:**
+- `app/services/PurpleAirService.scala` - PurpleAir sensor data API
