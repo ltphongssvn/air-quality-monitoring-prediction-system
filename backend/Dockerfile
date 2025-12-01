@@ -8,6 +8,7 @@ RUN apk add --no-cache bash curl && \
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
+RUN apk add --no-cache bash
 COPY --from=builder /app/target/universal/stage /app
 EXPOSE 9000
 CMD ["bin/air-quality-backend"]
