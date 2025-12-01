@@ -54,3 +54,16 @@ npm run build
 # Compiled successfully.
 # 61.01 kB  build/static/js/main.94f908db.js
 ```
+
+### Redux Store & Components Added
+**Status:** ✅ SUCCESS
+```bash
+npm run build
+# Compiled successfully.
+```
+
+**Files:**
+- `src/store/store.ts` - Redux store configuration
+- `src/store/aqiSlice.ts` - AQI state with async thunks
+- `src/services/aqiService.ts` - Axios API service
+- `src/components/AQICard.tsx` - AQI display with color coding
