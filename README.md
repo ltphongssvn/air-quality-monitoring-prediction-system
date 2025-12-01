@@ -95,3 +95,16 @@ docker compose config --quiet
 ```
 
 **Change:** Removed deprecated `version: '3.8'` attribute
+
+## Sprint 6: Local Component Testing
+
+### Epic: Verify All System Components
+
+**Tasks:**
+- [ ] Play Framework REST APIs (GET /api/v1/aqi)
+- [ ] MongoDB connection and operations
+- [ ] PostgreSQL/Slick connection
+- [ ] External API Services (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [ ] React Frontend Dashboard rendering
+- [ ] Akka Actors (SensorMonitorActor)
+- [ ] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
