@@ -64,3 +64,25 @@ cd backend && sbt compile
 ├── spark-jobs/       # Spark Streaming, ML, GraphX
 └── docs/             # Documentation
 ```
+
+## Docker Deployment
+
+### docker-compose.yml
+**Status:** ✅ VERIFIED
+```bash
+docker-compose config
+# No warnings with .env configured
+```
+
+**Services:**
+- backend (Play Framework) - port 9000
+- frontend (React/Nginx) - port 3000
+- postgres (PostgreSQL 15) - port 5432
+- mongodb (MongoDB 7) - port 27017
+
+**Setup:**
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+docker-compose up -d
+```
