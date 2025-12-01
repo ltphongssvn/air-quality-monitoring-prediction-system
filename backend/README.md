@@ -51,3 +51,15 @@ sbt compile
 | GET | /api/v1/aqi | AQIController.getAll() |
 | GET | /api/v1/aqi/:id | AQIController.getById(id) |
 | POST | /api/v1/aqi | AQIController.create() |
+
+### PredictionController Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 8 s
+```
+
+**Files:**
+- `app/controllers/PredictionController.scala` - Prediction endpoints
+  - `getAll()` - GET /api/v1/predictions
+  - `getByLocation(location)` - GET /api/v1/predictions/:location
