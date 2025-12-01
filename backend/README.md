@@ -93,3 +93,33 @@ sbt compile
   - `ProcessReading` - Process incoming AQI reading
   - `GetLatestReading` - Retrieve latest reading
   - `CheckThreshold` - Check if AQI exceeds threshold
+
+### OpenWeatherMapService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 14 s
+```
+
+**Files:**
+- `app/services/OpenWeatherMapService.scala` - Weather and air pollution data
+
+### PurpleAirService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 12 s
+```
+
+**Files:**
+- `app/services/PurpleAirService.scala` - PurpleAir sensor data API
+
+### EPAAirNowService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 10 s
+```
+
+**Files:**
+- `app/services/EPAAirNowService.scala` - EPA AirNow current/forecast data
