@@ -3,15 +3,3 @@
 
 # Health check
 GET     /health                     controllers.HealthController.check()
-
-# AQI endpoints
-GET     /api/v1/aqi                 controllers.AQIController.getAll()
-GET     /api/v1/aqi/:id             controllers.AQIController.getById(id: String)
-POST    /api/v1/aqi                 controllers.AQIController.create()
-
-# Predictions
-GET     /api/v1/predictions         controllers.PredictionController.getAll()
-GET     /api/v1/predictions/:location  controllers.PredictionController.getByLocation(location: String)
-
-# WebSocket for real-time data
-GET     /ws/aqi                     controllers.WebSocketController.aqiStream()
