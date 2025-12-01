@@ -36,3 +36,18 @@ sbt compile
   - `getAll()` - GET /api/v1/aqi
   - `getById(id)` - GET /api/v1/aqi/:id
   - `create()` - POST /api/v1/aqi
+
+### Routes Updated with AQI Endpoints
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 12 s
+```
+
+**Routes configured:**
+| Method | Path | Controller |
+|--------|------|------------|
+| GET | /health | HealthController.check() |
+| GET | /api/v1/aqi | AQIController.getAll() |
+| GET | /api/v1/aqi/:id | AQIController.getById(id) |
+| POST | /api/v1/aqi | AQIController.create() |
