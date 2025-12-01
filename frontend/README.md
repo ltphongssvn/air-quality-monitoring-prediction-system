@@ -67,3 +67,13 @@ npm run build
 - `src/store/aqiSlice.ts` - AQI state with async thunks
 - `src/services/aqiService.ts` - Axios API service
 - `src/components/AQICard.tsx` - AQI display with color coding
+
+### AQIChart Added
+**Status:** ✅ SUCCESS
+```bash
+npm run build
+# Compiled successfully.
+```
+
+**Files:**
+- `src/components/AQIChart.tsx` - D3.js time series visualization
