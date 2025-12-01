@@ -153,3 +153,14 @@ docker build -t air-quality-backend:test .
 
 **Files:**
 - `Dockerfile` - Multi-stage build (JDK builder → JRE runtime)
+
+### Backend Docker Run
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://localhost:9000/health
+# {"status":"healthy","service":"air-quality-backend","version":"0.1.0"}
+```
+
+**Fixes:**
+- Added bash to runtime image
+- Added akka-serialization-jackson 2.8.5 for version compatibility
