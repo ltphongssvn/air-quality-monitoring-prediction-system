@@ -18,3 +18,16 @@ sbt compile
 - Spark Core, SQL, Streaming, MLlib, GraphX
 - Kafka integration
 - Breeze (numerical computing)
+
+### AQIStreamProcessor Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 5 s
+```
+
+**Files:**
+- `src/main/scala/streaming/AQIStreamProcessor.scala`
+  - Kafka streaming input/output
+  - 5-minute window aggregations
+  - Env vars: KAFKA_BOOTSTRAP_SERVERS, KAFKA_INPUT_TOPIC, KAFKA_OUTPUT_TOPIC
