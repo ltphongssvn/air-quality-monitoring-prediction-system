@@ -44,3 +44,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Development Log
+
+### React TypeScript Initialized
+**Status:** ✅ SUCCESS
+```bash
+npm run build
+# Compiled successfully.
+# 61.01 kB  build/static/js/main.94f908db.js
+```
