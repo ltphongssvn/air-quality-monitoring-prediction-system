@@ -1,0 +1,4 @@
+# air-quality-monitoring-prediction-system/frontend/.dockerignore
+node_modules
+build
+.git
