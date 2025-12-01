@@ -113,3 +113,13 @@ sbt compile
 
 **Files:**
 - `app/services/PurpleAirService.scala` - PurpleAir sensor data API
+
+### EPAAirNowService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 10 s
+```
+
+**Files:**
+- `app/services/EPAAirNowService.scala` - EPA AirNow current/forecast data
