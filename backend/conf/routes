@@ -8,3 +8,7 @@ GET     /health                     controllers.HealthController.check()
 GET     /api/v1/aqi                 controllers.AQIController.getAll()
 GET     /api/v1/aqi/:id             controllers.AQIController.getById(id: String)
 POST    /api/v1/aqi                 controllers.AQIController.create()
+
+# Prediction endpoints
+GET     /api/v1/predictions         controllers.PredictionController.getAll()
+GET     /api/v1/predictions/:location  controllers.PredictionController.getByLocation(location: String)
