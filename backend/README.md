@@ -93,3 +93,13 @@ sbt compile
   - `ProcessReading` - Process incoming AQI reading
   - `GetLatestReading` - Retrieve latest reading
   - `CheckThreshold` - Check if AQI exceeds threshold
+
+### OpenWeatherMapService Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 14 s
+```
+
+**Files:**
+- `app/services/OpenWeatherMapService.scala` - Weather and air pollution data
