@@ -86,3 +86,12 @@ cp .env.example .env
 # Edit .env with your API keys
 docker-compose up -d
 ```
+
+### Docker Compose V2 Fix
+**Status:** ✅ VERIFIED
+```bash
+docker compose config --quiet
+# No errors or warnings
+```
+
+**Change:** Removed deprecated `version: '3.8'` attribute

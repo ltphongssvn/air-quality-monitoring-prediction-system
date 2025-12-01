@@ -1,6 +1,4 @@
 # air-quality-monitoring-prediction-system/docker-compose.yml
-version: '3.8'
-
 services:
   backend:
     build: ./backend
