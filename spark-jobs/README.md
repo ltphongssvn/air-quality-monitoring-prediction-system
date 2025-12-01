@@ -45,3 +45,17 @@ sbt compile
   - Feature scaling, 80/20 train/test split
   - RMSE/R2 evaluation metrics
   - Env vars: TRAINING_DATA_PATH, MODEL_OUTPUT_PATH
+
+### PollutionSpreadGraph Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 6 s
+```
+
+**Files:**
+- `src/main/scala/graphx/PollutionSpreadGraph.scala`
+  - Sensor network graph with geographic edges
+  - PageRank for pollution influence
+  - Connected components for clusters
+  - Pregel-based pollution propagation
