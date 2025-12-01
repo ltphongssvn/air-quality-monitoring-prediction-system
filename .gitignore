@@ -1,0 +1,35 @@
+# air-quality-monitoring-prediction-system/.gitignore
+# Scala/SBT
+target/
+*.class
+*.log
+*.jar
+.bsp/
+.metals/
+.bloop/
+project/target/
+project/project/
+
+# Play Framework
+logs/
+RUNNING_PID
+
+# Node/React
+node_modules/
+build/
+.env.local
+.env.production
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.pem
+application.local.conf
