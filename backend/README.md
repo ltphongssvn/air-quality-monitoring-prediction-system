@@ -80,3 +80,16 @@ sbt compile
 | POST | /api/v1/aqi | AQIController.create() |
 | GET | /api/v1/predictions | PredictionController.getAll() |
 | GET | /api/v1/predictions/:location | PredictionController.getByLocation(location) |
+
+### SensorMonitorActor Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 4 s
+```
+
+**Files:**
+- `app/actors/SensorMonitorActor.scala` - Akka Typed actor for sensor monitoring
+  - `ProcessReading` - Process incoming AQI reading
+  - `GetLatestReading` - Retrieve latest reading
+  - `CheckThreshold` - Check if AQI exceeds threshold
