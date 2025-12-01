@@ -110,3 +110,10 @@ docker build -t air-quality-frontend:test .
 - `Dockerfile` - Multi-stage build (Node builder → Nginx)
 - `nginx.conf` - Nginx with API proxy
 - `.dockerignore` - Excludes node_modules
+
+### Frontend Docker Run
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://localhost:3000 | head -5
+# <!doctype html><html lang="en">...
+```
