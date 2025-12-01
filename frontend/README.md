@@ -98,3 +98,15 @@ npm run build
 
 **Files:**
 - `src/App.tsx` - Redux Provider + Dashboard integration
+
+### Docker Build Added
+**Status:** ✅ SUCCESS
+```bash
+docker build -t air-quality-frontend:test .
+# [+] Building 59.6s (15/15) FINISHED
+```
+
+**Files:**
+- `Dockerfile` - Multi-stage build (Node builder → Nginx)
+- `nginx.conf` - Nginx with API proxy
+- `.dockerignore` - Excludes node_modules
