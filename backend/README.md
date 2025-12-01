@@ -11,3 +11,15 @@ sbt compile
 **Files:**
 - `app/controllers/HealthController.scala` - Health check endpoint
 - `conf/routes` - Routes only health endpoint (others pending)
+
+### AQIReading Model Added
+**Status:** ✅ SUCCESS
+```bash
+sbt compile
+# [success] Total time: 8 s
+```
+
+**Files:**
+- `app/models/AQIReading.scala` - AQI reading case class with JSON serialization
+  - `AQIReading`: id, sensorId, location, aqi, pm25, pm10, o3, no2, co, timestamp
+  - `Location`: latitude, longitude, city, country
