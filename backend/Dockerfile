@@ -10,5 +10,4 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=builder /app/target/universal/stage /app
 EXPOSE 9000
-ENV PLAY_SECRET_KEY=changeme
-CMD ["bin/air-quality-backend", "-Dplay.http.secret.key=${PLAY_SECRET_KEY}"]
+CMD ["bin/air-quality-backend"]
