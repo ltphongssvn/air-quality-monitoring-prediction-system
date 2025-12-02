@@ -7,7 +7,6 @@ import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.types._
 
 object AQIStreamProcessor {
-
   val aqiSchema: StructType = StructType(Seq(
     StructField("sensorId", StringType, nullable = false),
     StructField("latitude", DoubleType, nullable = false),
@@ -29,7 +28,8 @@ object AQIStreamProcessor {
 
     import spark.implicits._
 
-    val kafkaBootstrap = sys.env.getOrElse("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
+    // Default to kafka:9092 for Docker network
+    val kafkaBootstrap = sys.env.getOrElse("KAFKA_BOOTSTRAP_SERVERS", "kafka:9092")
     val inputTopic = sys.env.getOrElse("KAFKA_INPUT_TOPIC", "aqi-raw")
     val outputTopic = sys.env.getOrElse("KAFKA_OUTPUT_TOPIC", "aqi-processed")
 
