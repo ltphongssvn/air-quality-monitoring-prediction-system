@@ -107,4 +107,4 @@ docker compose config --quiet
 - [x] External API Services (OpenWeatherMap ✅, PurpleAir ✅, EPA AirNow ✅)
 - [x] React Frontend Dashboard rendering
 - [x] Akka Actors (SensorMonitorActor compiled, AkkaHttpServer running)
-- [ ] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
+- [x] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
