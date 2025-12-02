@@ -118,7 +118,7 @@ docker compose config --quiet
 - [x] Kafka setup for stream buffering (topic aqi-raw created)
 - [x] MongoDB database (sensor metadata, real-time readings)
 - [x] PostgreSQL database (historical aggregations)
-- [ ] Play Framework API configuration
+- [x] Play Framework API configuration
 - [ ] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
 - [ ] Basic data ingestion pipeline
 
