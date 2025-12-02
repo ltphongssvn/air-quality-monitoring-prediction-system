@@ -194,3 +194,14 @@ sbt "show discoveredMainClasses"
 ```
 
 **Fix needed:** Configure primary main class in build.sbt
+
+### Spark mainClass Fix Applied
+**Status:** ✅ FIXED
+```bash
+# Added to spark-jobs/build.sbt:
+Compile / mainClass := Some("streaming.AQIStreamProcessor")
+Compile / packageBin / mainClass := Some("streaming.AQIStreamProcessor")
+
+cd spark-jobs && sbt package
+# [success] Total time: 4 s
+```
