@@ -134,3 +134,14 @@ docker compose ps
 # kafka: Up, ports 9092, 29092
 # zookeeper: Up, port 2181
 ```
+
+## Phase 2: Core Processing (per CSCI-E88C Final Project)
+
+### Epic: Develop Processing Pipeline
+
+**Tasks:**
+- [ ] Spark Streaming transformations (real-time AQI processing)
+- [ ] AQI calculation algorithms
+- [ ] Actor-based monitoring system (Akka)
+- [ ] Kafka topic aqi-processed creation
+- [ ] End-to-end streaming test
