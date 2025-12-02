@@ -270,3 +270,12 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/b
 ```
 
 **Issue:** Kafka connector not included in assembly JAR - need to remove "provided" scope
+
+### Spark Streaming Job - Root Cause Found
+**Status:** ❌ ERROR - Kafka data source not found
+```bash
+docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 /opt/spark/work/air-quality-spark-jobs-assembly-0.1.0.jar 2>&1 | head -100
+# Exception: org.apache.spark.sql.AnalysisException: Failed to find data source: kafka
+```
+
+**Issue:** Kafka connector not included in assembly JAR - need to remove "provided" scope
