@@ -220,3 +220,13 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 mkdir -p /op
 docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs_2.12-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 # Successfully copied 29.2kB to air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 ```
+
+### Spark Submit Attempt
+**Status:** ❌ ERROR
+```bash
+docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 /opt/spark/work/air-quality-spark-jobs_2.12-0.1.0.jar
+# Exception: java.io.FileNotFoundException: /nonexistent/.ivy2/cache
+# Issue: No home directory for ivy cache in container
+```
+
+**Fix needed:** Build assembly JAR with all dependencies included
