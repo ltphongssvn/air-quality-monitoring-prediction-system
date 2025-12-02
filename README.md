@@ -176,3 +176,7 @@ docker compose down && docker compose up -d
 docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-raw --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
 # Created topic aqi-raw.
 ```
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+# Created topic aqi-processed.
+```
