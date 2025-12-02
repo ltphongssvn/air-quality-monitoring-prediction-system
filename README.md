@@ -108,3 +108,29 @@ docker compose config --quiet
 - [x] React Frontend Dashboard rendering
 - [x] Akka Actors (SensorMonitorActor compiled, AkkaHttpServer running)
 - [x] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
+
+## Phase 1: Infrastructure Verification (per CSCI-E88C Final Project)
+
+### Epic: Verify Infrastructure Components
+
+**Tasks:**
+- [x] Spark cluster setup and connectivity (Master UI at :8090)
+- [x] Kafka setup for stream buffering (topic aqi-raw created)
+- [x] MongoDB database (sensor metadata, real-time readings)
+- [x] PostgreSQL database (historical aggregations)
+- [x] Play Framework API configuration
+- [x] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [x] Basic data ingestion pipeline (Kafka produce/consume verified)
+
+### Spark Cluster Verified
+**Status:** ✅ SUCCESS
+```bash
+docker compose up -d zookeeper kafka spark-master spark-worker
+# All 4 containers started successfully
+
+docker compose ps
+# spark-master: Up, ports 7077, 8090
+# spark-worker: Up, connected to master
+# kafka: Up, ports 9092, 29092
+# zookeeper: Up, port 2181
+```

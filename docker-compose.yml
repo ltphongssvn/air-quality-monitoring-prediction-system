@@ -13,9 +13,11 @@ services:
       - OPENWEATHERMAP_API_KEY=${OPENWEATHERMAP_API_KEY}
       - PURPLEAIR_API_KEY=${PURPLEAIR_API_KEY}
       - EPA_AIRNOW_API_KEY=${EPA_AIRNOW_API_KEY}
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
     depends_on:
       - postgres
       - mongodb
+      - kafka
 
   frontend:
     build: ./frontend
@@ -43,6 +45,49 @@ services:
       - mongodb_data:/data/db
     ports:
       - "27017:27017"
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  spark-master:
+    image: spark:3.5.7-scala2.12-java17-ubuntu
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8090:8080"
+      - "7077:7077"
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+
+  spark-worker:
+    image: spark:3.5.7-scala2.12-java17-ubuntu
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    depends_on:
+      - spark-master
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
 
 volumes:
   postgres_data:
