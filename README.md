@@ -326,3 +326,13 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/b
 ```
 
 **Fix needed:** Update AQIStreamProcessor to use kafka:9092 for Docker network
+
+### Assembly JAR Rebuilt with Kafka Host Fix
+**Status:** ✅ SUCCESS
+```bash
+cd spark-jobs && sbt assembly
+# compiling 1 Scala source (AQIStreamProcessor.scala)
+# Built: spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar
+# Jar hash: 7ba70d71711003b8a967571aa4a658541ebeea80
+# [success] Total time: 21 s
+```
