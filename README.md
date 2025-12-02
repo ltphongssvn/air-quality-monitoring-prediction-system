@@ -114,7 +114,7 @@ docker compose config --quiet
 ### Epic: Verify Infrastructure Components
 
 **Tasks:**
-- [ ] Spark cluster setup and connectivity
+- [x] Spark cluster setup and connectivity (Master UI at :8090)
 - [x] Kafka setup for stream buffering (topic aqi-raw created)
 - [ ] MongoDB database (sensor metadata, real-time readings)
 - [ ] PostgreSQL database (historical aggregations)
