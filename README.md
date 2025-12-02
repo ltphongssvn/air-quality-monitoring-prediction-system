@@ -143,5 +143,12 @@ docker compose ps
 - [ ] Spark Streaming transformations (real-time AQI processing)
 - [ ] AQI calculation algorithms
 - [ ] Actor-based monitoring system (Akka)
-- [ ] Kafka topic aqi-processed creation
+- [x] Kafka topic aqi-processed creation
 - [ ] End-to-end streaming test
+
+### Kafka Topic aqi-processed Created
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+# Created topic aqi-processed.
+```
