@@ -444,3 +444,13 @@ cd spark-jobs && sbt "show discoveredMainClasses"
 ```
 
 **All 4 ML/Spark jobs compile and are ready for execution**
+
+## Phase 4: Frontend & Integration (per CSCI-E88C Final Project)
+
+### Epic: Dashboard and Real-time Updates
+
+**Tasks:**
+- [ ] React dashboard components verification
+- [ ] WebSocket real-time updates
+- [ ] D3.js visualizations
+- [ ] Backend-Frontend API integration test
