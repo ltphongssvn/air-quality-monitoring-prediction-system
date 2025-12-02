@@ -451,7 +451,7 @@ cd spark-jobs && sbt "show discoveredMainClasses"
 
 **Tasks:**
 - [x] React dashboard components verification
-- [ ] WebSocket real-time updates
+- [x] WebSocket real-time updates
 - [ ] D3.js visualizations
 - [ ] Backend-Frontend API integration test
 
@@ -464,3 +464,14 @@ docker compose down && docker compose up -d
 curl -s http://localhost:3000 | grep -o "<title>.*</title>"
 # <title>React App</title>
 ```
+
+### WebSocket Service Added
+**Status:** ✅ SUCCESS
+```bash
+cd frontend && npm run build
+# The build folder is ready to be deployed.
+# File sizes after gzip:
+#   109.4 kB  build/static/js/main.a8d0a1a4.js
+```
+
+**websocketService.ts:** connect(), disconnect(), subscribe() with auto-reconnect
