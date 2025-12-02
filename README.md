@@ -308,3 +308,10 @@ cd spark-jobs && sbt assembly
 # Jar hash: 9dfa92d27fdea01620d556a0ce156dfab10a3ba3
 # [success] Total time: 14 s
 ```
+
+### Updated JAR Copied to Spark Master
+**Status:** ✅ SUCCESS
+```bash
+docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
+# Successfully copied 107MB to air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
+```
