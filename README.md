@@ -411,7 +411,7 @@ cat spark-jobs/src/main/scala/ml/BreezeAnalytics.scala
 **Tasks:**
 - [x] Train forecasting models (MLlib RandomForest)
 - [x] Implement GraphX pollution spread algorithms
-- [ ] Anomaly detection implementation
+- [x] Anomaly detection implementation
 - [ ] ML pipeline integration test
 
 ### ML and GraphX Code Verified
@@ -423,3 +423,12 @@ cd spark-jobs && sbt compile
 
 **AQIPredictionPipeline.scala:** RandomForest regression with VectorAssembler, StandardScaler
 **PollutionSpreadGraph.scala:** GraphX PageRank, ConnectedComponents, Pregel propagation
+
+### Anomaly Detection Implementation
+**Status:** ✅ SUCCESS
+```bash
+cd spark-jobs && sbt compile
+# [success] Total time: 11 s
+```
+
+**AnomalyDetector.scala:** Z-score, IQR, and spike detection algorithms
