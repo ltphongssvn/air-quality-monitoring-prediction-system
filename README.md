@@ -169,3 +169,10 @@ docker compose down && docker compose up -d
 # Network air-quality-monitoring-prediction-system_default Created
 # All 9 containers started successfully
 ```
+
+### Kafka Topics Recreated After Reset
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-raw --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+# Created topic aqi-raw.
+```
