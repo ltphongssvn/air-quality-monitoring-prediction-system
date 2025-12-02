@@ -108,3 +108,16 @@ docker compose config --quiet
 - [x] React Frontend Dashboard rendering
 - [x] Akka Actors (SensorMonitorActor compiled, AkkaHttpServer running)
 - [x] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
+
+## Phase 1: Infrastructure Verification (per CSCI-E88C Final Project)
+
+### Epic: Verify Infrastructure Components
+
+**Tasks:**
+- [ ] Spark cluster setup and connectivity
+- [ ] Kafka setup for stream buffering
+- [ ] MongoDB database (sensor metadata, real-time readings)
+- [ ] PostgreSQL database (historical aggregations)
+- [ ] Play Framework API configuration
+- [ ] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [ ] Basic data ingestion pipeline
