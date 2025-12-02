@@ -315,3 +315,14 @@ cd spark-jobs && sbt assembly
 docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 # Successfully copied 107MB to air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 ```
+
+### Spark Streaming Job Started
+**Status:** ⚠️ PARTIAL SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 /opt/spark/work/air-quality-spark-jobs-assembly-0.1.0.jar 2>&1 | head -80
+# INFO MicroBatchExecution: Starting new streaming query.
+# INFO MicroBatchExecution: Stream started from {}
+# ISSUE: bootstrap.servers = [localhost:9092] - should be kafka:9092
+```
+
+**Fix needed:** Update AQIStreamProcessor to use kafka:9092 for Docker network
