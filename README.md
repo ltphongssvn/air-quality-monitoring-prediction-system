@@ -180,3 +180,17 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --crea
 docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
 # Created topic aqi-processed.
 ```
+
+### Spark Jobs Package
+**Status:** ✅ SUCCESS (warning to fix)
+```bash
+cd spark-jobs && sbt package
+# [warn] multiple main classes detected
+
+sbt "show discoveredMainClasses"
+# * graphx.PollutionSpreadGraph
+# * ml.AQIPredictionPipeline
+# * streaming.AQIStreamProcessor
+```
+
+**Fix needed:** Configure primary main class in build.sbt
