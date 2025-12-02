@@ -279,3 +279,12 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/b
 ```
 
 **Issue:** Kafka connector not included in assembly JAR - need to remove "provided" scope
+
+### Fix: Assembly Merge Strategy for Kafka
+**Status:** ✅ FIXED
+```bash
+# Updated spark-jobs/build.sbt assemblyMergeStrategy:
+# - Added: case PathList("META-INF", "services", xs @ _*) => MergeStrategy.concat
+# - Added: case "reference.conf" => MergeStrategy.concat
+# This preserves META-INF/services files needed for Kafka data source discovery
+```
