@@ -116,7 +116,7 @@ docker compose config --quiet
 **Tasks:**
 - [x] Spark cluster setup and connectivity (Master UI at :8090)
 - [x] Kafka setup for stream buffering (topic aqi-raw created)
-- [ ] MongoDB database (sensor metadata, real-time readings)
+- [x] MongoDB database (sensor metadata, real-time readings)
 - [ ] PostgreSQL database (historical aggregations)
 - [ ] Play Framework API configuration
 - [ ] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
