@@ -104,7 +104,7 @@ docker compose config --quiet
 - [x] Play Framework REST APIs (GET /api/v1/aqi)
 - [x] MongoDB connection and operations
 - [x] PostgreSQL/Slick connection
-- [ ] External API Services (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [x] External API Services (OpenWeatherMap ✅, PurpleAir ✅, EPA AirNow ✅)
 - [ ] React Frontend Dashboard rendering
 - [ ] Akka Actors (SensorMonitorActor)
 - [ ] Spark Jobs compilation (Streaming, ML, GraphX, Breeze)
