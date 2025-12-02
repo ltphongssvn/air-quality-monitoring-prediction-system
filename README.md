@@ -368,3 +368,10 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-run-class kaf
 ```
 
 **Note:** Windowed aggregation (5-min windows) requires multiple messages to trigger output
+
+### Multiple Messages Sent with Current Timestamps
+**Status:** ✅ SUCCESS
+```bash
+for i in 1 2 3 4 5; do echo "{\"sensorId\":\"sensor-00$i\",\"latitude\":34.05,\"longitude\":-118.24,\"aqi\":$((40+i*5)),\"pm25\":12.5,\"pm10\":25.0,\"o3\":0.03,\"no2\":0.02,\"co\":0.5,\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" | docker exec -i air-quality-monitoring-prediction-system-kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw; sleep 2; done
+# Sent 5 messages with current timestamps to trigger watermark advancement
+```
