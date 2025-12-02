@@ -246,3 +246,18 @@ cd spark-jobs && sbt assembly
 docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 # Successfully copied 107MB to air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 ```
+
+### Spark Streaming Job Submission
+**Status:** ❌ ERROR - Job killed
+```bash
+docker exec -d air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 --conf spark.kafka.bootstrap.servers=kafka:9092 /opt/spark/work/air-quality-spark-jobs-assembly-0.1.0.jar
+
+docker logs air-quality-monitoring-prediction-system-spark-master-1 2>&1 | tail -30
+# 15:09:59 INFO Master: Registering app AQI Stream Processor
+# 15:10:01 INFO Master: Removing app app-20251202150959-0000
+
+docker logs air-quality-monitoring-prediction-system-spark-worker-1 2>&1 | tail -50
+# Executor app-20251202150959-0000/0 finished with state KILLED exitStatus 143
+```
+
+**Issue:** Executor killed - need to check executor logs for root cause
