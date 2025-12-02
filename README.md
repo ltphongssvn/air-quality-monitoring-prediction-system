@@ -230,3 +230,12 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/b
 ```
 
 **Fix needed:** Build assembly JAR with all dependencies included
+
+### Spark Assembly JAR Built
+**Status:** ✅ SUCCESS
+```bash
+cd spark-jobs && sbt assembly
+# Built: spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar
+# Jar hash: 379d3b78f67bb15aa91a9c731137a04d2e58d651
+# [success] Total time: 11 s
+```
