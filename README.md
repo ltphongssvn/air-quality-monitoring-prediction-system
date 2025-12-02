@@ -205,3 +205,10 @@ Compile / packageBin / mainClass := Some("streaming.AQIStreamProcessor")
 cd spark-jobs && sbt package
 # [success] Total time: 4 s
 ```
+
+### Spark JAR Packaged
+**Status:** ✅ SUCCESS
+```bash
+ls -la spark-jobs/target/scala-2.12/*.jar
+# -rw-r--r-- 1 lenovo lenovo 27494 Dec  2 06:20 spark-jobs/target/scala-2.12/air-quality-spark-jobs_2.12-0.1.0.jar
+```
