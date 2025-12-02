@@ -359,3 +359,12 @@ curl -s http://localhost:8090 | grep -o "AQI Stream Processor"
 echo '{"sensorId":"test-001","latitude":34.05,"longitude":-118.24,"aqi":45,"pm25":12.5,"pm10":25.0,"o3":0.03,"no2":0.02,"co":0.5,"timestamp":"2025-12-02T17:55:00Z"}' | docker exec -i air-quality-monitoring-prediction-system-kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw
 # Message sent to aqi-raw topic for Spark processing
 ```
+
+### aqi-processed Topic Check
+**Status:** ⚠️ No output yet
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-run-class kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic aqi-processed
+# aqi-processed:0:0 (all partitions at offset 0)
+```
+
+**Note:** Windowed aggregation (5-min windows) requires multiple messages to trigger output
