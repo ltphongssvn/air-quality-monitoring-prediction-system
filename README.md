@@ -119,7 +119,7 @@ docker compose config --quiet
 - [x] MongoDB database (sensor metadata, real-time readings)
 - [x] PostgreSQL database (historical aggregations)
 - [x] Play Framework API configuration
-- [ ] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [x] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
 - [ ] Basic data ingestion pipeline
 
 ### Spark Cluster Verified
