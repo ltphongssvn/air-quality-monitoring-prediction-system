@@ -298,3 +298,13 @@ cd spark-jobs && sbt assembly
 # Jar hash: 9dfa92d27fdea01620d556a0ce156dfab10a3ba3
 # [success] Total time: 14 s
 ```
+
+### Assembly JAR Rebuilt with Kafka Support
+**Status:** ✅ SUCCESS
+```bash
+cd spark-jobs && sbt assembly
+# 2 file(s) merged using strategy 'Concat' (META-INF/services + reference.conf)
+# Built: spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar
+# Jar hash: 9dfa92d27fdea01620d556a0ce156dfab10a3ba3
+# [success] Total time: 14 s
+```
