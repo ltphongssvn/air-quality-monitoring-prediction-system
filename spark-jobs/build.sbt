@@ -28,8 +28,11 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.17" % Test
 )
 
-// Assembly settings
+// Assembly settings - preserve META-INF/services for Kafka data source discovery
 assembly / assemblyMergeStrategy := {
+  case PathList("META-INF", "services", xs @ _*) => MergeStrategy.concat
+  case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case "reference.conf" => MergeStrategy.concat
   case x => MergeStrategy.first
 }
