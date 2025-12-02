@@ -141,7 +141,7 @@ docker compose ps
 
 **Tasks:**
 - [x] Spark Streaming transformations (real-time AQI processing)
-- [ ] AQI calculation algorithms
+- [x] AQI calculation algorithms
 - [x] Actor-based monitoring system (Akka)
 - [x] Kafka topic aqi-processed creation
 - [x] End-to-end streaming test
@@ -393,3 +393,13 @@ docker compose logs backend 2>&1 | grep -i "AkkaHttpServer"
 ```
 
 **SensorMonitorActor:** Compiled and ready (ProcessReading, GetLatestReading, CheckThreshold commands)
+
+### AQI Calculation Algorithms
+**Status:** ✅ VERIFIED
+```bash
+cat spark-jobs/src/main/scala/ml/BreezeAnalytics.scala
+# - correlationMatrix: Statistical correlations between pollutants
+# - interpolateAQI: Inverse Distance Weighting (IDW) interpolation
+# - haversineDistance: Geographic distance calculation
+# - generateHeatmapData: Heatmap grid generation
+```
