@@ -120,7 +120,7 @@ docker compose config --quiet
 - [x] PostgreSQL database (historical aggregations)
 - [x] Play Framework API configuration
 - [x] API integrations (OpenWeatherMap, PurpleAir, EPA AirNow)
-- [ ] Basic data ingestion pipeline
+- [x] Basic data ingestion pipeline (Kafka produce/consume verified)
 
 ### Spark Cluster Verified
 **Status:** ✅ SUCCESS
