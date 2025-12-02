@@ -352,3 +352,10 @@ docker exec -d air-quality-monitoring-prediction-system-spark-master-1 /opt/spar
 curl -s http://localhost:8090 | grep -o "AQI Stream Processor"
 # AQI Stream Processor (job registered with Spark Master)
 ```
+
+### Test Message Sent to Kafka
+**Status:** ✅ SUCCESS
+```bash
+echo '{"sensorId":"test-001","latitude":34.05,"longitude":-118.24,"aqi":45,"pm25":12.5,"pm10":25.0,"o3":0.03,"no2":0.02,"co":0.5,"timestamp":"2025-12-02T17:55:00Z"}' | docker exec -i air-quality-monitoring-prediction-system-kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw
+# Message sent to aqi-raw topic for Spark processing
+```
