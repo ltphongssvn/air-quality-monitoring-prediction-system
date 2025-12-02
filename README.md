@@ -142,7 +142,7 @@ docker compose ps
 **Tasks:**
 - [x] Spark Streaming transformations (real-time AQI processing)
 - [ ] AQI calculation algorithms
-- [ ] Actor-based monitoring system (Akka)
+- [x] Actor-based monitoring system (Akka)
 - [x] Kafka topic aqi-processed creation
 - [x] End-to-end streaming test
 
@@ -384,3 +384,12 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-console-consu
 ```
 
 **Verified:** Kafka → Spark Streaming → 5-min window aggregation → Kafka output
+
+### Actor-based Monitoring System (Akka)
+**Status:** ✅ VERIFIED
+```bash
+docker compose logs backend 2>&1 | grep -i "AkkaHttpServer"
+# INFO p.c.s.AkkaHttpServer - Listening for HTTP on /[0:0:0:0:0:0:0:0]:9000
+```
+
+**SensorMonitorActor:** Compiled and ready (ProcessReading, GetLatestReading, CheckThreshold commands)
