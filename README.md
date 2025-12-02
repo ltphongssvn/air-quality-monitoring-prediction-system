@@ -403,3 +403,13 @@ cat spark-jobs/src/main/scala/ml/BreezeAnalytics.scala
 # - haversineDistance: Geographic distance calculation
 # - generateHeatmapData: Heatmap grid generation
 ```
+
+## Phase 3: Machine Learning (per CSCI-E88C Final Project)
+
+### Epic: ML Models and Predictions
+
+**Tasks:**
+- [ ] Train forecasting models (MLlib time-series)
+- [ ] Implement GraphX pollution spread algorithms
+- [ ] Anomaly detection implementation
+- [ ] ML pipeline integration test
