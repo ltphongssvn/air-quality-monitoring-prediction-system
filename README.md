@@ -140,11 +140,11 @@ docker compose ps
 ### Epic: Develop Processing Pipeline
 
 **Tasks:**
-- [ ] Spark Streaming transformations (real-time AQI processing)
+- [x] Spark Streaming transformations (real-time AQI processing)
 - [ ] AQI calculation algorithms
 - [ ] Actor-based monitoring system (Akka)
 - [x] Kafka topic aqi-processed creation
-- [ ] End-to-end streaming test
+- [x] End-to-end streaming test
 
 ### Kafka Topic aqi-processed Created
 **Status:** ✅ SUCCESS
@@ -375,3 +375,12 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-run-class kaf
 for i in 1 2 3 4 5; do echo "{\"sensorId\":\"sensor-00$i\",\"latitude\":34.05,\"longitude\":-118.24,\"aqi\":$((40+i*5)),\"pm25\":12.5,\"pm10\":25.0,\"o3\":0.03,\"no2\":0.02,\"co\":0.5,\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" | docker exec -i air-quality-monitoring-prediction-system-kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw; sleep 2; done
 # Sent 5 messages with current timestamps to trigger watermark advancement
 ```
+
+### End-to-End Streaming Verified
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-console-consumer --bootstrap-server localhost:9092 --topic aqi-processed --partition 2 --offset 0 --max-messages 1 --timeout-ms 5000
+# {"window":{"start":"2025-12-02T17:55:00.000Z","end":"2025-12-02T18:00:00.000Z"},"sensorId":"test-001","avg_aqi":45.0,"max_aqi":45,"avg_pm25":12.5,"reading_count":1}
+```
+
+**Verified:** Kafka → Spark Streaming → 5-min window aggregation → Kafka output
