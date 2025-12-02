@@ -152,3 +152,12 @@ docker compose ps
 docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
 # Created topic aqi-processed.
 ```
+
+### Docker Network Issue
+**Status:** ❌ ERROR
+```bash
+docker compose up -d
+# Error response from daemon: failed to set up container networking: network e2f2779b568c500dafdb5b69b90e41cb67ad968bfa36a70dd8d5be7fa6eaed9e not found
+```
+
+**Fix:** Need to recreate Docker network
