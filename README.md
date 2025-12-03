@@ -782,3 +782,14 @@ docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo
 gcloud compute networks create default --subnet-mode=auto
 # Created default VPC network
 ```
+
+### GKE Cluster Created
+**Status:** ✅ SUCCESS
+```bash
+gcloud container clusters create air-quality-cluster --num-nodes=2 --machine-type=e2-medium --zone=us-central1-a
+# NAME: air-quality-cluster
+# LOCATION: us-central1-a
+# MASTER_IP: 34.136.254.47
+# NUM_NODES: 2
+# STATUS: RUNNING
+```
