@@ -1057,3 +1057,26 @@ curl -s http://airquality.thanhphongle.net/api/v1/aqi
 - https://airquality.thanhphongle.net/api/v1/aqi ✅
 
 **Phase 5 GCP Deployment: COMPLETE**
+
+### HTTPS API Verified
+**Status:** ✅ SUCCESS
+```bash
+curl -s https://airquality.thanhphongle.net/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001","location":{"latitude":34.0522,"longitude":-118.2437,"city":"Los Angeles","country":"USA"},"aqi":42,...}]
+```
+
+---
+
+## Phase 5 Summary
+
+| Task | Status |
+|------|--------|
+| Unit Tests | ✅ Complete |
+| Load Testing | ✅ Complete |
+| External API Verification | ✅ Complete |
+| Kafka Throughput | ✅ Complete |
+| GCP Project Setup | ✅ Complete |
+| Docker Images (backend:v4, frontend:v4) | ✅ Complete |
+| GKE Cluster (4 pods) | ✅ Running |
+| Cloudflare DNS + HTTPS | ✅ Complete |
+| Live URL | https://airquality.thanhphongle.net |
