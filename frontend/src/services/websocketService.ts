@@ -1,19 +1,18 @@
 // air-quality-monitoring-prediction-system/frontend/src/services/websocketService.ts
-import { AQIReading } from '../store/aqiSlice';
 
-type MessageHandler = (reading: AQIReading) => void;
+type MessageHandler = (data: unknown) => void;
 
 class WebSocketService {
   private ws: WebSocket | null = null;
-  private handlers: MessageHandler[] = [];
+  private handlers: Set<MessageHandler> = new Set();
   private reconnectAttempts = 0;
   private maxReconnectAttempts = 5;
   private reconnectDelay = 3000;
 
-  connect(url: string = 'ws://localhost:9000/ws/aqi'): void {
-    if (this.ws?.readyState === WebSocket.OPEN) return;
-
-    this.ws = new WebSocket(url);
+  connect(url?: string): void {
+    const wsUrl = url || process.env.REACT_APP_WS_URL || `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws/aqi`;
+    
+    this.ws = new WebSocket(wsUrl);
 
     this.ws.onopen = () => {
       console.log('WebSocket connected');
@@ -22,8 +21,8 @@ class WebSocketService {
 
     this.ws.onmessage = (event) => {
       try {
-        const reading: AQIReading = JSON.parse(event.data);
-        this.handlers.forEach(handler => handler(reading));
+        const data = JSON.parse(event.data);
+        this.handlers.forEach(handler => handler(data));
       } catch (error) {
         console.error('Failed to parse WebSocket message:', error);
       }
@@ -31,7 +30,7 @@ class WebSocketService {
 
     this.ws.onclose = () => {
       console.log('WebSocket disconnected');
-      this.attemptReconnect(url);
+      this.attemptReconnect(wsUrl);
     };
 
     this.ws.onerror = (error) => {
@@ -42,16 +41,14 @@ class WebSocketService {
   private attemptReconnect(url: string): void {
     if (this.reconnectAttempts < this.maxReconnectAttempts) {
       this.reconnectAttempts++;
-      console.log(`Reconnecting... attempt ${this.reconnectAttempts}`);
+      console.log(`Attempting to reconnect (${this.reconnectAttempts}/${this.maxReconnectAttempts})...`);
       setTimeout(() => this.connect(url), this.reconnectDelay);
     }
   }
 
   subscribe(handler: MessageHandler): () => void {
-    this.handlers.push(handler);
-    return () => {
-      this.handlers = this.handlers.filter(h => h !== handler);
-    };
+    this.handlers.add(handler);
+    return () => this.handlers.delete(handler);
   }
 
   disconnect(): void {
