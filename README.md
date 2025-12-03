@@ -1085,3 +1085,17 @@ curl -s https://airquality.thanhphongle.net/api/v1/aqi
 **PR #14:** https://github.com/ltphongssvn/air-quality-monitoring-prediction-system/pull/14
 
 **Branch:** feature/phase5-testing-deployment → develop
+
+### Phase 5 Merged to Main
+**Status:** ✅ COMPLETE
+```bash
+gh pr merge 14 --merge --delete-branch
+git checkout main && git merge develop && git push origin main
+# main -> main (8e96994)
+```
+
+**All Phases Complete:**
+- Phase 0-4: Infrastructure, Spark, ML, Frontend
+- Phase 5: Testing & GCP Deployment
+
+**Production:** https://airquality.thanhphongle.net
