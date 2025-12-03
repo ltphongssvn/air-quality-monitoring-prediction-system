@@ -494,3 +494,13 @@ curl -s http://localhost:9000/api/v1/aqi
 curl -s http://localhost:3000/api/v1/aqi
 # [{"id":"1","sensorId":"sensor-001",...}] (proxied via nginx)
 ```
+
+## Phase 5: Testing & Deployment (per CSCI-E88C Final Project)
+
+### Epic: Load Testing and GCP Deployment
+
+**Tasks:**
+- [ ] Load testing with synthetic events
+- [ ] Deploy to GCP infrastructure
+- [ ] Performance optimization verification
+- [ ] Unit tests implementation
