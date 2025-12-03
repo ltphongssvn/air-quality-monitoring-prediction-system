@@ -938,3 +938,12 @@ curl -s http://airquality.thanhphongle.net | grep -o "<title>.*</title>"
 
 **Live URL:** http://airquality.thanhphongle.net
 **DNS:** A record → airquality.thanhphongle.net → 34.72.5.235
+
+### GCP Deployment Test - Issues Found
+**Status:** ❌ ERROR
+
+**Console errors:**
+- XMLHttpRequest to `http://localhost:9000/api/v1/aqi` blocked by CORS
+- Frontend calling `localhost:9000` instead of backend-service
+
+**Root cause:** React app hardcoded to call localhost:9000, needs to use relative `/api` URL
