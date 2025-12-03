@@ -1080,3 +1080,8 @@ curl -s https://airquality.thanhphongle.net/api/v1/aqi
 | GKE Cluster (4 pods) | ✅ Running |
 | Cloudflare DNS + HTTPS | ✅ Complete |
 | Live URL | https://airquality.thanhphongle.net |
+
+### Phase 5 PR Created
+**PR #14:** https://github.com/ltphongssvn/air-quality-monitoring-prediction-system/pull/14
+
+**Branch:** feature/phase5-testing-deployment → develop
