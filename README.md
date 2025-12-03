@@ -633,3 +633,9 @@ docker exec air-quality-monitoring-prediction-system-spark-master-1 mkdir -p /op
 docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
 # Successfully copied 107MB
 ```
+
+### Spark Streaming Job Started
+**Status:** ✅ SUCCESS
+```bash
+docker exec -d air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 /opt/spark/work/air-quality-spark-jobs-assembly-0.1.0.jar
+```
