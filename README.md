@@ -919,3 +919,12 @@ kubectl get pods
 ```
 
 **Configuration:** 2 backend + 2 frontend replicas for high availability
+
+### Frontend Accessible at External IP
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://34.72.5.235 | grep -o "<title>.*</title>"
+# <title>React App</title>
+```
+
+**Next:** Configure Cloudflare DNS: A record → airquality.thanhphongle.net → 34.72.5.235
