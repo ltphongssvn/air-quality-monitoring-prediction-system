@@ -709,3 +709,13 @@ gcloud projects create air-quality-mon-20251202 --name="Air Quality Monitoring S
 gcloud config set project air-quality-mon-20251202
 # Updated property [core/project].
 ```
+
+### Application Default Credentials Set
+**Status:** ✅ SUCCESS
+```bash
+gcloud auth application-default set-quota-project air-quality-mon-20251202
+# Credentials saved to file: [/home/lenovo/.config/gcloud/application_default_credentials.json]
+# Quota project "air-quality-mon-20251202" was added to ADC
+```
+
+**Issue:** Billing must be enabled for the project before enabling GCP services.
