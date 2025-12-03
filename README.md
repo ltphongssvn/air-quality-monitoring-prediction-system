@@ -847,3 +847,10 @@ docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-
 docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v2
 # v2: digest: sha256:ebfde07c376c1e4c88a378fb889a1beac0abae7396fc1c048c7a064b130112f8
 ```
+
+### Frontend Deployment Updated to v2
+**Status:** ✅ SUCCESS
+```bash
+sed -i 's/frontend:v1/frontend:v2/' k8s/frontend-deployment.yaml && kubectl apply -f k8s/frontend-deployment.yaml
+# deployment.apps/frontend configured
+```
