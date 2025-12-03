@@ -1006,3 +1006,10 @@ sleep 30 && kubectl get pods
 ```
 
 **All 4 pods running:** 2 backend + 2 frontend with load balancing
+
+### Frontend v4 Built & Pushed (FQDN fix)
+**Status:** ✅ SUCCESS
+```bash
+docker build -t .../frontend:v4 ./frontend && docker push .../frontend:v4
+# v4: digest: sha256:554bc6d86c5d2f74ef8249777d7614319784c2add441227c491af52fe5a21004
+```
