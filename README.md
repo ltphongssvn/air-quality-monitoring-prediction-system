@@ -570,14 +570,14 @@ docker compose ps
 ### External API Verification: OpenWeatherMap
 **Status:** ✅ SUCCESS
 ```bash
-curl -s "http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=d691273d6af6a2610ae8dc1de234d4a8"
+curl -s "http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=XXXX273d6afXXXX10ae8dXXXX234d4a8"
 # {"coord":{"lon":-118.2437,"lat":34.0522},"weather":[{"id":800,"main":"Clear"...}],"cod":200}
 ```
 
 ### External API Verification: PurpleAir
 **Status:** ✅ SUCCESS
 ```bash
-curl -s -H "X-API-Key: 71780BB8-CF20-11F0-B596-4201AC1DC123" "https://api.purpleair.com/v1/sensors?fields=name,latitude,longitude,pm2.5&nwlng=-118.5&nwlat=34.2&selng=-118.0&selat=33.9"
+curl -s -H "X-API-Key: XXXX0BB8-XX20-XXF0-XX96-XXXXAC1DC123" "https://api.purpleair.com/v1/sensors?fields=name,latitude,longitude,pm2.5&nwlng=-118.5&nwlat=34.2&selng=-118.0&selat=33.9"
 # Returns 90+ sensors in LA area with real-time PM2.5 data
 # Example: [262161,"Living Room",34.176273,-118.16047,1.3]
 ```
@@ -585,7 +585,7 @@ curl -s -H "X-API-Key: 71780BB8-CF20-11F0-B596-4201AC1DC123" "https://api.purple
 ### External API Verification: EPA AirNow
 **Status:** ✅ SUCCESS
 ```bash
-curl -s "https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=90210&API_KEY=5E136F2E-256C-4AD1-A206-50A561DE5C0A"
+curl -s "https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=90210&API_KEY=XXXX6F2E-XX6C-XXD1-XX06-XXXX61DE5C0A"
 # [{"DateObserved":"2025-12-02","ReportingArea":"NW Coastal LA","ParameterName":"O3","AQI":31,"Category":{"Name":"Good"}}]
 ```
 
@@ -723,7 +723,7 @@ gcloud auth application-default set-quota-project air-quality-mon-20251202
 ### Billing Account Linked
 **Status:** ✅ SUCCESS
 ```bash
-gcloud billing projects link air-quality-mon-20251202 --billing-account=0156D5-7F7115-E7ADEC
+gcloud billing projects link air-quality-mon-20251202 --billing-account=xxxxD5-xxxx15-XXXXEC
 # billingEnabled: true
 ```
 
