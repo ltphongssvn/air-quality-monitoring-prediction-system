@@ -768,3 +768,10 @@ docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-
 docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v1
 # v1: digest: sha256:096ef35e2feed93d4b6014edc9f2f166f367d54311373a714c7f9fdc7b913de2
 ```
+
+### Frontend Image Pushed to Artifact Registry
+**Status:** ✅ SUCCESS
+```bash
+docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v1
+# v1: digest: sha256:b40c9f108b31f5ad429af30c019a5b666d2cf695f2c081b7a1688ce6b9b7e292
+```
