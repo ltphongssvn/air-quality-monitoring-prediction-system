@@ -639,3 +639,10 @@ docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar
 ```bash
 docker exec -d air-quality-monitoring-prediction-system-spark-master-1 /opt/spark/bin/spark-submit --class streaming.AQIStreamProcessor --master spark://spark-master:7077 /opt/spark/work/air-quality-spark-jobs-assembly-0.1.0.jar
 ```
+
+### Spark Streaming Job Verified Running
+**Status:** ✅ SUCCESS
+```bash
+sleep 15 && curl -s http://localhost:8090 | grep -o "AQI Stream Processor"
+# AQI Stream Processor
+```
