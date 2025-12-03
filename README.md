@@ -625,3 +625,11 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --crea
 # Created topic aqi-raw.
 # Created topic aqi-processed.
 ```
+
+### Spark JAR Deployed to Master
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-spark-master-1 mkdir -p /opt/spark/work
+docker cp spark-jobs/target/scala-2.12/air-quality-spark-jobs-assembly-0.1.0.jar air-quality-monitoring-prediction-system-spark-master-1:/opt/spark/work/
+# Successfully copied 107MB
+```
