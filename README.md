@@ -896,3 +896,14 @@ kubectl get pods
 ```
 
 **Note:** 2 frontend replicas configured intentionally for high availability (load balancing)
+
+### Cluster Resources Check
+**Status:** ✅ Sufficient for 2 backend replicas
+```bash
+kubectl describe nodes | grep -A 5 "Allocatable:"
+# cpu: 940m per node × 2 nodes = 1880m total
+# Current usage: frontend 2×100m + backend 1×100m = 300m
+# Available: ~1500m (after system overhead)
+```
+
+**Decision:** Scale backend to 2 replicas for load balancing
