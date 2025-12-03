@@ -854,3 +854,16 @@ docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo
 sed -i 's/frontend:v1/frontend:v2/' k8s/frontend-deployment.yaml && kubectl apply -f k8s/frontend-deployment.yaml
 # deployment.apps/frontend configured
 ```
+
+### Pods Status After Frontend v2 Update
+**Status:** ⚠️ PARTIAL
+```bash
+kubectl get pods
+# frontend-c7d6c5c4f-f5pcl   1/1     Running            0             4m22s  ✅
+# frontend-c7d6c5c4f-r5kgj   1/1     Running            0             4m19s  ✅
+# backend-74c5d94578-hrr72   0/1     CrashLoopBackOff   9             24m    ❌
+# backend-74c5d94578-ftp97   0/1     Pending            0             24m    ❌
+```
+
+**Frontend:** ✅ Running (nginx fix worked)
+**Backend:** ❌ CrashLoopBackOff - needs investigation
