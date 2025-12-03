@@ -573,3 +573,11 @@ docker compose ps
 curl -s "http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=d691273d6af6a2610ae8dc1de234d4a8"
 # {"coord":{"lon":-118.2437,"lat":34.0522},"weather":[{"id":800,"main":"Clear"...}],"cod":200}
 ```
+
+### External API Verification: PurpleAir
+**Status:** ✅ SUCCESS
+```bash
+curl -s -H "X-API-Key: 71780BB8-CF20-11F0-B596-4201AC1DC123" "https://api.purpleair.com/v1/sensors?fields=name,latitude,longitude,pm2.5&nwlng=-118.5&nwlat=34.2&selng=-118.0&selat=33.9"
+# Returns 90+ sensors in LA area with real-time PM2.5 data
+# Example: [262161,"Living Room",34.176273,-118.16047,1.3]
+```
