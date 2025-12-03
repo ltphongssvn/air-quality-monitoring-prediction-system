@@ -966,3 +966,10 @@ curl -s http://airquality.thanhphongle.net | grep -o "<title>.*</title>"
 docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v2 ./backend
 # [+] Building 144.5s (15/15) FINISHED
 ```
+
+### Backend v2 Image Pushed
+**Status:** ✅ SUCCESS
+```bash
+docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v2
+# v2: digest: sha256:753cbe322475fb02ee7d690f332a92496f3a185a01054b928e0fbd784f73550d
+```
