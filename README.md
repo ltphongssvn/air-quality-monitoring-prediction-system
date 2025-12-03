@@ -653,3 +653,10 @@ sleep 15 && curl -s http://localhost:8090 | grep -o "AQI Stream Processor"
 echo '{"sensorId":"latency-test",...,"timestamp":"2025-12-03T02:13:53Z"}' | docker exec -i kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw
 # Test message sent at Tue Dec 2 18:13:53 PST 2025
 ```
+
+### Multiple Messages Sent for Watermark Advancement
+**Status:** ✅ SUCCESS
+```bash
+for i in 1 2 3 4 5; do echo "{...timestamp:$(date -u)}" | kafka-console-producer --topic aqi-raw; sleep 2; done
+# Sent 5 messages at Tue Dec 2 18:27:19 PST 2025
+```
