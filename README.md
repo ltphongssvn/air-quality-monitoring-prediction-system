@@ -547,3 +547,22 @@ curl -s http://localhost:3000/api/v1/aqi
 ```
 
 **All services operational:** Backend, Frontend, Kafka, MongoDB, PostgreSQL, Spark
+
+## System Verification (per CSCI-E88C Final Project Requirements)
+
+### Current Infrastructure Status
+**Status:** ✅ All 8 containers running
+```bash
+docker compose ps
+# backend (9000), frontend (3000), kafka (9092), mongodb (27017)
+# postgres (5432), spark-master (7077/8090), spark-worker, zookeeper (2181)
+```
+
+### Verification Tasks
+- [ ] Data ingestion from external APIs (OpenWeatherMap, PurpleAir, EPA AirNow)
+- [ ] Kafka throughput measurement (target: 100K events/sec)
+- [ ] End-to-end processing latency (target: <5 minutes)
+- [ ] ML prediction accuracy verification (target: >85%)
+- [ ] API response time (target: <200ms p95)
+- [ ] Dashboard real-time updates (target: <1 second)
+- [ ] GCP deployment preparation
