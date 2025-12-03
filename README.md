@@ -810,3 +810,11 @@ kubectl get services frontend-service
 ```
 
 **Next:** Configure Cloudflare DNS: A record → airquality.thanhphongle.net → 34.72.5.235
+
+### Backend Deployed to GKE
+**Status:** ✅ SUCCESS
+```bash
+kubectl apply -f k8s/backend-deployment.yaml
+# deployment.apps/backend created
+# service/backend-service created
+```
