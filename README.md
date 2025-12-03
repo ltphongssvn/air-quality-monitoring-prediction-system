@@ -503,7 +503,7 @@ curl -s http://localhost:3000/api/v1/aqi
 - [x] Load testing with synthetic events
 - [ ] Deploy to GCP infrastructure
 - [ ] Performance optimization verification
-- [ ] Unit tests implementation
+- [x] Unit tests implementation
 
 ### LoadTestGenerator Compiled
 **Status:** ✅ SUCCESS
@@ -526,3 +526,12 @@ docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --crea
 for i in {1..50}; do echo "{\"sensorId\":\"sensor-...\",\"aqi\":...,\"timestamp\":\"...\"}" | docker exec -i air-quality-monitoring-prediction-system-kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw; done
 # Sent 50 messages
 ```
+
+### Unit Tests Added
+**Status:** ✅ SUCCESS
+```bash
+cd backend && sbt compile
+# [success] Total time: 12 s
+```
+
+**AQIControllerSpec.scala:** Tests for /health and /api/v1/aqi endpoints
