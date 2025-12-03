@@ -867,3 +867,12 @@ kubectl get pods
 
 **Frontend:** ✅ Running (nginx fix worked)
 **Backend:** ❌ CrashLoopBackOff - needs investigation
+
+### Backend Crash Reason Identified
+**Status:** ❌ ERROR
+```bash
+kubectl logs backend-74c5d94578-hrr72
+# Configuration error: The application secret has not been set, and we are in prod mode.
+```
+
+**Fix needed:** Add APPLICATION_SECRET environment variable to backend deployment
