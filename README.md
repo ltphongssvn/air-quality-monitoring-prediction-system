@@ -801,3 +801,12 @@ kubectl apply -f k8s/frontend-deployment.yaml
 # deployment.apps/frontend created
 # service/frontend-service created
 ```
+
+### Frontend External IP Assigned
+**Status:** ✅ SUCCESS
+```bash
+kubectl get services frontend-service
+# EXTERNAL-IP: 34.72.5.235
+```
+
+**Next:** Configure Cloudflare DNS: A record → airquality.thanhphongle.net → 34.72.5.235
