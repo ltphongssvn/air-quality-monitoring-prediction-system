@@ -973,3 +973,10 @@ docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-
 docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v2
 # v2: digest: sha256:753cbe322475fb02ee7d690f332a92496f3a185a01054b928e0fbd784f73550d
 ```
+
+### Frontend v3 Image Built (with relative API URL)
+**Status:** ✅ SUCCESS
+```bash
+docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v3 ./frontend
+# [+] Building 48.7s (17/17) FINISHED
+```
