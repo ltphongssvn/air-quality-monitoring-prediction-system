@@ -686,3 +686,11 @@ cat spark-jobs/src/main/scala/ml/AQIPredictionPipeline.scala
 - Expected R² >0.85 on training data (industry standard for AQI prediction)
 
 **Note:** Full accuracy testing requires historical training data. Pipeline ready for production deployment.
+
+### GCP Account Switched
+**Status:** ✅ SUCCESS
+```bash
+gcloud config set account phl690@g.harvard.edu
+# Updated property [core/account].
+# ACTIVE: phl690@g.harvard.edu
+```
