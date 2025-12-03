@@ -501,7 +501,7 @@ curl -s http://localhost:3000/api/v1/aqi
 
 **Tasks:**
 - [x] Load testing with synthetic events
-- [ ] Deploy to GCP infrastructure
+- [x] Deploy to GCP infrastructure
 - [x] Performance optimization verification
 - [x] Unit tests implementation
 
@@ -565,7 +565,7 @@ docker compose ps
 - [x] ML prediction accuracy verification (target: >85%)
 - [x] API response time (target: <200ms p95)
 - [x] Dashboard real-time updates (target: <1 second)
-- [ ] GCP deployment preparation
+- [x] GCP deployment (GKE + Cloudflare DNS)
 
 ### External API Verification: OpenWeatherMap
 **Status:** ✅ SUCCESS
@@ -928,3 +928,13 @@ curl -s http://34.72.5.235 | grep -o "<title>.*</title>"
 ```
 
 **Next:** Configure Cloudflare DNS: A record → airquality.thanhphongle.net → 34.72.5.235
+
+### Cloudflare DNS Configured
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://airquality.thanhphongle.net | grep -o "<title>.*</title>"
+# <title>React App</title>
+```
+
+**Live URL:** http://airquality.thanhphongle.net
+**DNS:** A record → airquality.thanhphongle.net → 34.72.5.235
