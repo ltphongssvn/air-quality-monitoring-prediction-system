@@ -20,6 +20,11 @@ spec:
         image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v1
         ports:
         - containerPort: 9000
+        env:
+        - name: APPLICATION_SECRET
+          value: "air-quality-mon-secret-key-change-in-production-2025"
+        - name: PLAY_HTTP_SECRET_KEY
+          value: "air-quality-mon-secret-key-change-in-production-2025"
         resources:
           requests:
             memory: "512Mi"
