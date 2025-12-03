@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v2
+        image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v3
         ports:
         - containerPort: 80
         resources:
