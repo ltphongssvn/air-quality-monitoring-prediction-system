@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v3
+        image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v4
         ports:
         - containerPort: 9000
         env:

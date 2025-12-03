@@ -1013,3 +1013,10 @@ sleep 30 && kubectl get pods
 docker build -t .../frontend:v4 ./frontend && docker push .../frontend:v4
 # v4: digest: sha256:554bc6d86c5d2f74ef8249777d7614319784c2add441227c491af52fe5a21004
 ```
+
+### Backend v4 Built & Pushed (allow all hosts)
+**Status:** ✅ SUCCESS
+```bash
+docker build -t .../backend:v4 ./backend && docker push .../backend:v4
+# v4: digest: sha256:9bf89639249ceda590c0993ecaffbd04c40398497da58c94594fc0e428a76196
+```
