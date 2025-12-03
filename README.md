@@ -453,7 +453,7 @@ cd spark-jobs && sbt "show discoveredMainClasses"
 - [x] React dashboard components verification
 - [x] WebSocket real-time updates
 - [x] D3.js visualizations
-- [ ] Backend-Frontend API integration test
+- [x] Backend-Frontend API integration test
 
 ### Docker Services Restarted
 **Status:** ✅ SUCCESS
@@ -484,3 +484,13 @@ cat frontend/src/components/AQIChart.tsx | grep "import \* as d3"
 ```
 
 **AQIChart.tsx:** D3.js line chart with scaleTime, scaleLinear, axisBottom, axisLeft, line path, circles
+
+### Backend-Frontend API Integration
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://localhost:9000/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001",...}]
+
+curl -s http://localhost:3000/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001",...}] (proxied via nginx)
+```
