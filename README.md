@@ -740,3 +740,10 @@ gcloud services enable container.googleapis.com artifactregistry.googleapis.com 
 gcloud artifacts repositories create air-quality-repo --repository-format=docker --location=us-central1
 # Created repository [air-quality-repo].
 ```
+
+### Docker Configured for Artifact Registry
+**Status:** ✅ SUCCESS
+```bash
+gcloud auth configure-docker us-central1-docker.pkg.dev
+# Docker configuration file updated.
+```
