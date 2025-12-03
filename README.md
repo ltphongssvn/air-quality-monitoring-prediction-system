@@ -775,3 +775,10 @@ docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo
 docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v1
 # v1: digest: sha256:b40c9f108b31f5ad429af30c019a5b666d2cf695f2c081b7a1688ce6b9b7e292
 ```
+
+### VPC Network Created
+**Status:** ✅ SUCCESS
+```bash
+gcloud compute networks create default --subnet-mode=auto
+# Created default VPC network
+```
