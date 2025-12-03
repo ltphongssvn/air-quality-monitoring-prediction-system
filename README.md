@@ -876,3 +876,12 @@ kubectl logs backend-74c5d94578-hrr72
 ```
 
 **Fix needed:** Add APPLICATION_SECRET environment variable to backend deployment
+
+### Backend Pod Pending - Resource Constraints
+**Status:** ❌ ERROR
+```bash
+kubectl describe pod backend-766d59dbdd-wpw7d | grep -A 10 "Events:"
+# Warning  FailedScheduling: 0/2 nodes are available: 2 Insufficient cpu
+```
+
+**Fix needed:** Reduce backend CPU requests to fit cluster capacity
