@@ -833,3 +833,10 @@ kubectl get pods
 - 1 backend pod Running, 1 Pending (resource constraints)
 - Frontend pods CrashLoopBackOff (nginx can't resolve backend at startup)
 - Need to rebuild frontend with updated nginx.conf
+
+### Frontend v2 Image Built (with nginx fix)
+**Status:** ✅ SUCCESS
+```bash
+docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v2 ./frontend
+# [+] Building 42.9s (17/17) FINISHED
+```
