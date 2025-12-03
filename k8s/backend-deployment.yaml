@@ -20,8 +20,14 @@ spec:
         image: us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v1
         ports:
         - containerPort: 9000
+        env:
+        - name: PLAY_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: play-secret-key
         command: ["bin/air-quality-backend"]
-        args: ["-Dplay.http.secret.key=air-quality-mon-secret-key-change-in-production-2025"]
+        args: ["-Dplay.http.secret.key=$(PLAY_SECRET_KEY)"]
         resources:
           requests:
             memory: "256Mi"
