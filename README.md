@@ -1043,3 +1043,17 @@ curl -s http://airquality.thanhphongle.net/api/v1/aqi
 - PM2.5: 10.5 μg/m³, PM10: 22.3 μg/m³, O3: 0.035 ppm
 
 **Next:** Enable HTTPS via Cloudflare SSL
+
+### HTTPS Enabled via Cloudflare
+**Status:** ✅ SUCCESS
+
+**Configuration:**
+- SSL Mode: Flexible (Cloudflare HTTPS → Origin HTTP)
+- DNS Proxy: Enabled (orange cloud)
+- A Record: airquality → 34.72.5.235
+
+**Live URLs:**
+- https://airquality.thanhphongle.net ✅
+- https://airquality.thanhphongle.net/api/v1/aqi ✅
+
+**Phase 5 GCP Deployment: COMPLETE**
