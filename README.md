@@ -818,3 +818,18 @@ kubectl apply -f k8s/backend-deployment.yaml
 # deployment.apps/backend created
 # service/backend-service created
 ```
+
+### Backend Pods Status Check
+**Status:** ⚠️ PARTIAL
+```bash
+kubectl get pods
+# backend-74c5d94578-ftp97   0/1     Pending            0               4m40s
+# backend-74c5d94578-hrr72   1/1     Running            5 (97s ago)     4m40s
+# frontend-95fbbf96b-m6crt   0/1     CrashLoopBackOff   94              7h42m
+# frontend-95fbbf96b-nxc86   0/1     CrashLoopBackOff   95              7h42m
+```
+
+**Issues:**
+- 1 backend pod Running, 1 Pending (resource constraints)
+- Frontend pods CrashLoopBackOff (nginx can't resolve backend at startup)
+- Need to rebuild frontend with updated nginx.conf
