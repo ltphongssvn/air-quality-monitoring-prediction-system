@@ -793,3 +793,11 @@ gcloud container clusters create air-quality-cluster --num-nodes=2 --machine-typ
 # NUM_NODES: 2
 # STATUS: RUNNING
 ```
+
+### Frontend Deployed to GKE
+**Status:** ✅ SUCCESS
+```bash
+kubectl apply -f k8s/frontend-deployment.yaml
+# deployment.apps/frontend created
+# service/frontend-service created
+```
