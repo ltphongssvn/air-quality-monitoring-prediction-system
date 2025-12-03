@@ -733,3 +733,10 @@ gcloud billing projects link air-quality-mon-20251202 --billing-account=0156D5-7
 gcloud services enable container.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com sqladmin.googleapis.com
 # Operation finished successfully.
 ```
+
+### Artifact Registry Created
+**Status:** ✅ SUCCESS
+```bash
+gcloud artifacts repositories create air-quality-repo --repository-format=docker --location=us-central1
+# Created repository [air-quality-repo].
+```
