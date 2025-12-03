@@ -840,3 +840,10 @@ kubectl get pods
 docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v2 ./frontend
 # [+] Building 42.9s (17/17) FINISHED
 ```
+
+### Frontend v2 Image Pushed
+**Status:** ✅ SUCCESS
+```bash
+docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/frontend:v2
+# v2: digest: sha256:ebfde07c376c1e4c88a378fb889a1beac0abae7396fc1c048c7a064b130112f8
+```
