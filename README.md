@@ -702,3 +702,10 @@ gcloud projects create air-quality-mon-20251202 --name="Air Quality Monitoring S
 # Create in progress... done.
 # Enabling service [cloudapis.googleapis.com]... finished successfully.
 ```
+
+### GCP Project Set
+**Status:** ✅ SUCCESS
+```bash
+gcloud config set project air-quality-mon-20251202
+# Updated property [core/project].
+```
