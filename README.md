@@ -1020,3 +1020,15 @@ docker build -t .../frontend:v4 ./frontend && docker push .../frontend:v4
 docker build -t .../backend:v4 ./backend && docker push .../backend:v4
 # v4: digest: sha256:9bf89639249ceda590c0993ecaffbd04c40398497da58c94594fc0e428a76196
 ```
+
+### API Working on GCP
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://airquality.thanhphongle.net/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001","location":{"latitude":34.0522,"longitude":-118.2437,"city":"Los Angeles","country":"USA"},"aqi":42,...}]
+```
+
+**GCP Deployment Complete:**
+- Frontend: http://airquality.thanhphongle.net ✅
+- API: http://airquality.thanhphongle.net/api/v1/aqi ✅
+- 4 pods running (2 backend + 2 frontend)
