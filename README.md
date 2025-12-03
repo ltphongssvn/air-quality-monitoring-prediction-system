@@ -646,3 +646,10 @@ docker exec -d air-quality-monitoring-prediction-system-spark-master-1 /opt/spar
 sleep 15 && curl -s http://localhost:8090 | grep -o "AQI Stream Processor"
 # AQI Stream Processor
 ```
+
+### End-to-End Latency Test Started
+**Status:** 🔄 IN PROGRESS
+```bash
+echo '{"sensorId":"latency-test",...,"timestamp":"2025-12-03T02:13:53Z"}' | docker exec -i kafka-1 kafka-console-producer --broker-list localhost:9092 --topic aqi-raw
+# Test message sent at Tue Dec 2 18:13:53 PST 2025
+```
