@@ -1032,3 +1032,14 @@ curl -s http://airquality.thanhphongle.net/api/v1/aqi
 - Frontend: http://airquality.thanhphongle.net ✅
 - API: http://airquality.thanhphongle.net/api/v1/aqi ✅
 - 4 pods running (2 backend + 2 frontend)
+
+### GCP Deployment Verified in Browser
+**Status:** ✅ SUCCESS
+
+**Live Dashboard:** http://airquality.thanhphongle.net
+- Air Quality Dashboard loads correctly
+- AQI Trend chart (D3.js) displays data
+- Current Readings: Los Angeles, AQI 42 "Good"
+- PM2.5: 10.5 μg/m³, PM10: 22.3 μg/m³, O3: 0.035 ppm
+
+**Next:** Enable HTTPS via Cloudflare SSL
