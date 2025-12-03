@@ -616,3 +616,12 @@ time curl -s http://localhost:9000/api/v1/aqi > /dev/null
 - Current Readings card: Los Angeles, AQI 42 "Good"
 - PM2.5: 10.5 μg/m³, PM10: 22.3 μg/m³, O3: 0.035 ppm
 - Browser Console: No errors, No warnings
+
+### Kafka Topics Recreated (after restart)
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-raw --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1 --if-not-exists
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1 --if-not-exists
+# Created topic aqi-raw.
+# Created topic aqi-processed.
+```
