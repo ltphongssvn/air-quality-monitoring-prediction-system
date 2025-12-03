@@ -994,3 +994,15 @@ docker push us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo
 docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v3 ./backend
 # [+] Building 114.4s (15/15) FINISHED
 ```
+
+### Backend v3 Deployed - All Pods Running
+**Status:** ✅ SUCCESS
+```bash
+sleep 30 && kubectl get pods
+# backend-7bd964f998-snxk2    1/1     Running   0          2m51s
+# backend-7bd964f998-x2f4w    1/1     Running   0          2m43s
+# frontend-7fccdfdb84-c2jhr   1/1     Running   0          37m
+# frontend-7fccdfdb84-kqzkd   1/1     Running   0          37m
+```
+
+**All 4 pods running:** 2 backend + 2 frontend with load balancing
