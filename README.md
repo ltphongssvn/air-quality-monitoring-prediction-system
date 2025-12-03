@@ -511,3 +511,11 @@ curl -s http://localhost:3000/api/v1/aqi
 cd spark-jobs && sbt compile
 # [success] Total time: 14 s
 ```
+
+### Kafka Topics Recreated (after container restart)
+**Status:** ✅ SUCCESS
+```bash
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-raw --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1 --if-not-exists
+docker exec air-quality-monitoring-prediction-system-kafka-1 kafka-topics --create --topic aqi-processed --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1 --if-not-exists
+# Created topic aqi-processed.
+```
