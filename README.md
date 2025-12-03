@@ -726,3 +726,10 @@ gcloud auth application-default set-quota-project air-quality-mon-20251202
 gcloud billing projects link air-quality-mon-20251202 --billing-account=0156D5-7F7115-E7ADEC
 # billingEnabled: true
 ```
+
+### GCP APIs Enabled
+**Status:** ✅ SUCCESS
+```bash
+gcloud services enable container.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com sqladmin.googleapis.com
+# Operation finished successfully.
+```
