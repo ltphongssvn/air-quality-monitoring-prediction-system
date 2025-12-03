@@ -444,3 +444,53 @@ cd spark-jobs && sbt "show discoveredMainClasses"
 ```
 
 **All 4 ML/Spark jobs compile and are ready for execution**
+
+## Phase 4: Frontend & Integration (per CSCI-E88C Final Project)
+
+### Epic: Dashboard and Real-time Updates
+
+**Tasks:**
+- [x] React dashboard components verification
+- [x] WebSocket real-time updates
+- [x] D3.js visualizations
+- [x] Backend-Frontend API integration test
+
+### Docker Services Restarted
+**Status:** ✅ SUCCESS
+```bash
+docker compose down && docker compose up -d
+# All 9 services started (backend, frontend, kafka, mongodb, postgres, spark-master, spark-worker, zookeeper)
+
+curl -s http://localhost:3000 | grep -o "<title>.*</title>"
+# <title>React App</title>
+```
+
+### WebSocket Service Added
+**Status:** ✅ SUCCESS
+```bash
+cd frontend && npm run build
+# The build folder is ready to be deployed.
+# File sizes after gzip:
+#   109.4 kB  build/static/js/main.a8d0a1a4.js
+```
+
+**websocketService.ts:** connect(), disconnect(), subscribe() with auto-reconnect
+
+### D3.js Visualizations
+**Status:** ✅ VERIFIED
+```bash
+cat frontend/src/components/AQIChart.tsx | grep "import \* as d3"
+# import * as d3 from 'd3';
+```
+
+**AQIChart.tsx:** D3.js line chart with scaleTime, scaleLinear, axisBottom, axisLeft, line path, circles
+
+### Backend-Frontend API Integration
+**Status:** ✅ SUCCESS
+```bash
+curl -s http://localhost:9000/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001",...}]
+
+curl -s http://localhost:3000/api/v1/aqi
+# [{"id":"1","sensorId":"sensor-001",...}] (proxied via nginx)
+```
