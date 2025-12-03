@@ -719,3 +719,10 @@ gcloud auth application-default set-quota-project air-quality-mon-20251202
 ```
 
 **Issue:** Billing must be enabled for the project before enabling GCP services.
+
+### Billing Account Linked
+**Status:** ✅ SUCCESS
+```bash
+gcloud billing projects link air-quality-mon-20251202 --billing-account=0156D5-7F7115-E7ADEC
+# billingEnabled: true
+```
