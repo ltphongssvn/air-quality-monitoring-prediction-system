@@ -694,3 +694,11 @@ gcloud config set account phl690@g.harvard.edu
 # Updated property [core/account].
 # ACTIVE: phl690@g.harvard.edu
 ```
+
+### GCP Project Created
+**Status:** ✅ SUCCESS
+```bash
+gcloud projects create air-quality-mon-20251202 --name="Air Quality Monitoring System"
+# Create in progress... done.
+# Enabling service [cloudapis.googleapis.com]... finished successfully.
+```
