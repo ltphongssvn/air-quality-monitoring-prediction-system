@@ -959,3 +959,10 @@ curl -s http://airquality.thanhphongle.net | grep -o "<title>.*</title>"
 | docker-compose.yml | localhost for dev | Acceptable for local dev ✅ |
 
 **Priority:** Fix K8s secret and CORS origins
+
+### Backend v2 Image Built (with CORS env var)
+**Status:** ✅ SUCCESS
+```bash
+docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v2 ./backend
+# [+] Building 144.5s (15/15) FINISHED
+```
