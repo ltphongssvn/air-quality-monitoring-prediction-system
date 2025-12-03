@@ -747,3 +747,10 @@ gcloud artifacts repositories create air-quality-repo --repository-format=docker
 gcloud auth configure-docker us-central1-docker.pkg.dev
 # Docker configuration file updated.
 ```
+
+### Backend Docker Image Built
+**Status:** ✅ SUCCESS
+```bash
+docker build -t us-central1-docker.pkg.dev/air-quality-mon-20251202/air-quality-repo/backend:v1 ./backend
+# [+] Building 91.3s (15/15) FINISHED
+```
