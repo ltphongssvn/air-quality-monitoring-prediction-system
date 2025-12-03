@@ -947,3 +947,15 @@ curl -s http://airquality.thanhphongle.net | grep -o "<title>.*</title>"
 - Frontend calling `localhost:9000` instead of backend-service
 
 **Root cause:** React app hardcoded to call localhost:9000, needs to use relative `/api` URL
+
+### Hardcoded Values Audit
+**Status:** ⚠️ Found issues to fix
+
+| File | Issue | Fix |
+|------|-------|-----|
+| k8s/backend-deployment.yaml | Hardcoded play.http.secret.key | Use K8s Secret |
+| backend/conf/application.conf | allowedOrigins localhost:3000 | Use env var |
+| backend/app/repositories/MongoDBRepository.scala | mongodb://localhost fallback | Already uses env var ✅ |
+| docker-compose.yml | localhost for dev | Acceptable for local dev ✅ |
+
+**Priority:** Fix K8s secret and CORS origins
