@@ -21,7 +21,7 @@ zipHomework := {
   val zip = new ZipOutputStream(new FileOutputStream(zipFile))
   
   def addFileToZip(file: File, entryName: String): Unit = {
-    if (file.isFile && !file.getName.endsWith(".class") && !file.getName.endsWith(".jar")) {
+    if (file.isFile && !file.getName.endsWith(".class") && !file.getName.endsWith(".jar") && !file.getName.equals(".gitkeep")) {
       zip.putNextEntry(new ZipEntry(entryName))
       val in = new FileInputStream(file)
       val buffer = new Array[Byte](1024)
