@@ -1316,3 +1316,11 @@ gcloud storage buckets list --project=grp2-pacific
 **Output:** Listed 0 items.
 **Finding:** ✅ Storage verified deleted.
 
+
+### Step 69: Check Artifact Registry
+```bash
+gcloud artifacts repositories list --project=grp2-pacific
+```
+**Output:** Listed 0 items.
+**Finding:** No Artifact Registry repositories.
+
