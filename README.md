@@ -1308,3 +1308,11 @@ for bucket in dataproc-staging-us-central1-583206985661-x8gsotjb dataproc-temp-u
 **Output:** All 3 buckets deleted successfully.
 **Finding:** ✅ Cloud Storage buckets deleted.
 
+
+### Step 68: Verify Storage Deleted
+```bash
+gcloud storage buckets list --project=grp2-pacific
+```
+**Output:** Listed 0 items.
+**Finding:** ✅ Storage verified deleted.
+
