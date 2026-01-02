@@ -1354,3 +1354,17 @@ gcloud billing projects list --billing-account=01B70E-444417-A30A98
 
 All cost-incurring projects deleted. No active billing.
 
+
+## Billing Account Remaining Funds Check
+
+### Step 72: Check Billing Account 0156D5-7F7115-E7ADEC
+```bash
+gcloud billing accounts describe 0156D5-7F7115-E7ADEC
+```
+**Output:**
+```
+displayName: $300 till 13 May 25 + $1,000 till 12 Feb 26
+open: true
+```
+**Note:** gcloud CLI doesn't show remaining balance. Check GCP Console for actual remaining credits.
+
