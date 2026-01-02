@@ -1300,3 +1300,11 @@ gcloud dataproc clusters list --project=grp2-pacific --region=us-central1
 **Output:** Listed 0 items.
 **Finding:** No active Dataproc clusters.
 
+
+### Step 67: Delete Cloud Storage Buckets
+```bash
+for bucket in dataproc-staging-us-central1-583206985661-x8gsotjb dataproc-temp-us-central1-583206985661-co9y41tm grp2-pacific-dataproc; do echo "Deleting: $bucket"; gcloud storage rm -r gs://$bucket --quiet; done
+```
+**Output:** All 3 buckets deleted successfully.
+**Finding:** ✅ Cloud Storage buckets deleted.
+
