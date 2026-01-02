@@ -1292,3 +1292,11 @@ gcloud storage buckets list --project=grp2-pacific
 
 **Finding:** 3 Cloud Storage buckets (Dataproc-related) - cost-incurring.
 
+
+### Step 66: Check Dataproc Clusters
+```bash
+gcloud dataproc clusters list --project=grp2-pacific --region=us-central1
+```
+**Output:** Listed 0 items.
+**Finding:** No active Dataproc clusters.
+
