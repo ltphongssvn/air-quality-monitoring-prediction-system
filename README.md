@@ -1280,3 +1280,15 @@ gcloud compute instances list
 **Output:** Listed 0 items.
 **Finding:** No compute instances.
 
+
+### Step 65: Check Cloud Storage
+```bash
+gcloud storage buckets list --project=grp2-pacific
+```
+**Output:** 3 buckets found:
+- dataproc-staging-us-central1-583206985661-x8gsotjb
+- dataproc-temp-us-central1-583206985661-co9y41tm
+- grp2-pacific-dataproc
+
+**Finding:** 3 Cloud Storage buckets (Dataproc-related) - cost-incurring.
+
