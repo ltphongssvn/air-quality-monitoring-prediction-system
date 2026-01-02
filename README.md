@@ -1455,3 +1455,20 @@ Both billing accounts now show **Status: Closed** in GCP Console:
 2. Subscriptions & services → Cancel subscription
 3. Payment methods → Remove card
 
+
+### Step 78: Close Billing Accounts
+
+Both billing accounts now show **Status: Closed** in GCP Console:
+- Google_Developer_Program_Billing_Account (019A33-82CB5B-AE969B) - Closed
+- My Billing Account (015809-2B69EF-EC599E) - Closed
+
+**Note:** Billing accounts cannot be deleted, only closed. Closed accounts:
+- Cannot incur new charges
+- Cannot link new projects
+- Remain visible but inactive
+
+**To fully remove Google Cloud subscription:**
+1. Go to https://payments.google.com
+2. Subscriptions & services → Cancel subscription
+3. Payment methods → Remove card
+
