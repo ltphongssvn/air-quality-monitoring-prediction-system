@@ -1207,3 +1207,11 @@ gcloud storage buckets list --project=ac215-e115-hw2
 **Output:** Listed 0 items.
 **Finding:** No Cloud Storage buckets.
 
+
+### Step 58: Check Artifact Registry
+```bash
+gcloud artifacts repositories list --project=ac215-e115-hw2
+```
+**Output:** Listed 0 items.
+**Finding:** No Artifact Registry repositories.
+
