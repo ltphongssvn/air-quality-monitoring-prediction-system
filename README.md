@@ -1270,3 +1270,13 @@ grp2-pacific  01B70E-444417-A30A98  True
 ```
 **Finding:** 1 project `grp2-pacific` with billing enabled - needs investigation.
 
+
+### Step 64: Audit grp2-pacific Project
+```bash
+gcloud config set project grp2-pacific
+gcloud auth application-default set-quota-project grp2-pacific
+gcloud compute instances list
+```
+**Output:** Listed 0 items.
+**Finding:** No compute instances.
+
