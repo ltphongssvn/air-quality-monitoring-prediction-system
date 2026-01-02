@@ -1170,3 +1170,14 @@ gcloud artifacts repositories list --project=air-quality-mon-20251202
 **Output:** Listed 0 items.
 **Finding:** ✅ Artifact Registry deleted.
 
+
+### Step 54: Delete Project
+```bash
+gcloud projects delete air-quality-mon-20251202 --quiet
+```
+**Output:**
+```
+Deleted [https://cloudresourcemanager.googleapis.com/v1/projects/air-quality-mon-20251202].
+```
+**Finding:** ✅ Project air-quality-mon-20251202 deleted.
+
