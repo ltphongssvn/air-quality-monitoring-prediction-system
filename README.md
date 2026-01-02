@@ -1379,3 +1379,14 @@ displayName: $50_till_28_Jan_26
 open: true
 ```
 
+
+### Step 74: Check Billing Account 013BC5-BABD4F-5374BA
+```bash
+gcloud billing accounts describe 013BC5-BABD4F-5374BA
+```
+**Output:**
+```
+displayName: Billing Account for Education
+open: true
+```
+
