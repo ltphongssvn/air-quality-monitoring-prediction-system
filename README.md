@@ -1421,3 +1421,20 @@ gcloud auth login ltphongssvn@gmail.com
 ```
 **Output:** Logged in as ltphongssvn@gmail.com.
 
+
+### Step 77: Check Billing Account Projects
+```bash
+gcloud billing accounts list
+```
+**Output:**
+```
+ACCOUNT_ID            NAME                                      OPEN
+015809-2B69EF-EC599E  My Billing Account                        False
+019A33-82CB5B-AE969B  Google_Developer_Program_Billing_Account  True
+```
+```bash
+gcloud billing projects list --billing-account=019A33-82CB5B-AE969B
+```
+**Output:** Listed 0 items.
+**Finding:** No projects linked. Safe to close billing account.
+
