@@ -1412,3 +1412,12 @@ open: true
 
 **Note:** gcloud CLI doesn't expose remaining credit balance. Check GCP Console Billing section for actual remaining funds.
 
+
+## Cancel Google Cloud Subscription (ltphongssvn@gmail.com)
+
+### Step 76: Switch to ltphongssvn@gmail.com Account
+```bash
+gcloud auth login ltphongssvn@gmail.com
+```
+**Output:** Logged in as ltphongssvn@gmail.com.
+
