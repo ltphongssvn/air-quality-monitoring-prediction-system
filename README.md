@@ -1390,3 +1390,25 @@ displayName: Billing Account for Education
 open: true
 ```
 
+
+### Step 75: Check Billing Account 01B70E-444417-A30A98
+```bash
+gcloud billing accounts describe 01B70E-444417-A30A98
+```
+**Output:**
+```
+displayName: Billing Account for Education
+open: true
+```
+
+## Billing Accounts Summary
+
+| Account ID | Display Name | Status |
+|------------|--------------|--------|
+| 0156D5-7F7115-E7ADEC | $300 till 13 May 25 + $1,000 till 12 Feb 26 | Open |
+| 015410-9926DC-20C1F8 | $50_till_28_Jan_26 | Open |
+| 013BC5-BABD4F-5374BA | Billing Account for Education | Open |
+| 01B70E-444417-A30A98 | Billing Account for Education | Open |
+
+**Note:** gcloud CLI doesn't expose remaining credit balance. Check GCP Console Billing section for actual remaining funds.
+
