@@ -1215,3 +1215,20 @@ gcloud artifacts repositories list --project=ac215-e115-hw2
 **Output:** Listed 0 items.
 **Finding:** No Artifact Registry repositories.
 
+
+### Step 59: Delete Project ac215-e115-hw2
+```bash
+gcloud projects delete ac215-e115-hw2 --quiet
+```
+**Output:**
+```
+Deleted [https://cloudresourcemanager.googleapis.com/v1/projects/ac215-e115-hw2].
+```
+**Finding:** ✅ Project ac215-e115-hw2 deleted.
+
+## Final Summary - All Billing-Linked Projects Cleaned
+
+- ✅ erp-for-smes - deleted
+- ✅ air-quality-mon-20251202 - deleted  
+- ✅ ac215-e115-hw2 - deleted
+
