@@ -1153,3 +1153,20 @@ air-quality-repo  DOCKER  STANDARD_REPOSITORY  Air Quality Monitoring Docker ima
 ```
 **Finding:** 1 Artifact Registry repository (~291 MB) - cost-incurring.
 
+
+### Step 53: Delete Artifact Registry
+```bash
+gcloud artifacts repositories delete air-quality-repo --location=us-central1 --project=air-quality-mon-20251202 --quiet
+```
+**Output:**
+```
+Deleted repository [air-quality-repo].
+```
+
+#### Verify deletion:
+```bash
+gcloud artifacts repositories list --project=air-quality-mon-20251202
+```
+**Output:** Listed 0 items.
+**Finding:** ✅ Artifact Registry deleted.
+
