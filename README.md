@@ -1324,3 +1324,14 @@ gcloud artifacts repositories list --project=grp2-pacific
 **Output:** Listed 0 items.
 **Finding:** No Artifact Registry repositories.
 
+
+### Step 70: Delete Project grp2-pacific
+```bash
+gcloud projects delete grp2-pacific --quiet
+```
+**Output:**
+```
+Deleted [https://cloudresourcemanager.googleapis.com/v1/projects/grp2-pacific].
+```
+**Finding:** ✅ Project grp2-pacific deleted.
+
