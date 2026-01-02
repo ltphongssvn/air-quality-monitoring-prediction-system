@@ -1199,3 +1199,11 @@ gcloud compute instances list --project=ac215-e115-hw2
 **Output:** Listed 0 items.
 **Finding:** No compute instances.
 
+
+### Step 57: Check Cloud Storage
+```bash
+gcloud storage buckets list --project=ac215-e115-hw2
+```
+**Output:** Listed 0 items.
+**Finding:** No Cloud Storage buckets.
+
