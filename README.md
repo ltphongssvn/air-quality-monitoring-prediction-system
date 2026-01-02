@@ -1181,3 +1181,13 @@ Deleted [https://cloudresourcemanager.googleapis.com/v1/projects/air-quality-mon
 ```
 **Finding:** ✅ Project air-quality-mon-20251202 deleted.
 
+
+## Audit ac215-e115-hw2 Project
+
+### Step 55: Set Project and Update ADC
+```bash
+gcloud config set project ac215-e115-hw2
+gcloud auth application-default set-quota-project ac215-e115-hw2
+```
+**Output:** Credentials updated. Kubernetes Engine API not enabled (no GKE clusters).
+
