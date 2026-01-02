@@ -1250,3 +1250,11 @@ gcloud billing projects list --billing-account=015410-9926DC-20C1F8
 **Output:** Listed 0 items.
 **Finding:** No projects linked.
 
+
+### Step 62: Check Billing Account 013BC5-BABD4F-5374BA
+```bash
+gcloud billing projects list --billing-account=013BC5-BABD4F-5374BA
+```
+**Output:** Listed 0 items.
+**Finding:** No projects linked.
+
