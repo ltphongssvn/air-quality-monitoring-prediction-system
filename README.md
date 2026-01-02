@@ -1133,3 +1133,23 @@ gcloud container clusters list --project=air-quality-mon-20251202
 **Output:** (empty - no clusters)
 **Finding:** ✅ GKE cluster verified deleted.
 
+
+### Step 52: Check Other Services
+
+#### Cloud Storage:
+```bash
+gcloud storage buckets list --project=air-quality-mon-20251202
+```
+**Output:** Listed 0 items.
+
+#### Artifact Registry:
+```bash
+gcloud artifacts repositories list --project=air-quality-mon-20251202
+```
+**Output:**
+```
+REPOSITORY        FORMAT  MODE                 DESCRIPTION                           LOCATION     SIZE (MB)
+air-quality-repo  DOCKER  STANDARD_REPOSITORY  Air Quality Monitoring Docker images  us-central1  290.719
+```
+**Finding:** 1 Artifact Registry repository (~291 MB) - cost-incurring.
+
