@@ -1258,3 +1258,15 @@ gcloud billing projects list --billing-account=013BC5-BABD4F-5374BA
 **Output:** Listed 0 items.
 **Finding:** No projects linked.
 
+
+### Step 63: Check Billing Account 01B70E-444417-A30A98
+```bash
+gcloud billing projects list --billing-account=01B70E-444417-A30A98
+```
+**Output:**
+```
+PROJECT_ID    BILLING_ACCOUNT_ID    BILLING_ENABLED
+grp2-pacific  01B70E-444417-A30A98  True
+```
+**Finding:** 1 project `grp2-pacific` with billing enabled - needs investigation.
+
