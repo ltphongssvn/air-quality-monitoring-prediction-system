@@ -1368,3 +1368,14 @@ open: true
 ```
 **Note:** gcloud CLI doesn't show remaining balance. Check GCP Console for actual remaining credits.
 
+
+### Step 73: Check Billing Account 015410-9926DC-20C1F8
+```bash
+gcloud billing accounts describe 015410-9926DC-20C1F8
+```
+**Output:**
+```
+displayName: $50_till_28_Jan_26
+open: true
+```
+
