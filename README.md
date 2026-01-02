@@ -1113,3 +1113,15 @@ air-quality-cluster  us-central1-a  1.33.5-gke.1308000  34.136.254.47  e2-medium
 ```
 **Finding:** 1 RUNNING GKE cluster with 2 nodes (cost-incurring).
 
+
+### Step 50: Delete GKE Cluster
+```bash
+gcloud container clusters delete air-quality-cluster --zone=us-central1-a --project=air-quality-mon-20251202 --quiet
+```
+**Output:**
+```
+Deleting cluster air-quality-cluster...done.
+Deleted [https://container.googleapis.com/v1/projects/air-quality-mon-20251202/zones/us-central1-a/clusters/air-quality-cluster].
+```
+**Finding:** ✅ GKE cluster deleted.
+
