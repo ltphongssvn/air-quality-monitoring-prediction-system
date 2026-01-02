@@ -1099,3 +1099,17 @@ git checkout main && git merge develop && git push origin main
 - Phase 5: Testing & GCP Deployment
 
 **Production:** https://airquality.thanhphongle.net
+
+## GCP Cost Investigation - 2025-01-02
+
+### Step 49: List GKE Clusters
+```bash
+gcloud container clusters list --project=air-quality-mon-20251202
+```
+**Output:**
+```
+NAME                 LOCATION       MASTER_VERSION      MASTER_IP      MACHINE_TYPE  NODE_VERSION          NUM_NODES  STATUS
+air-quality-cluster  us-central1-a  1.33.5-gke.1308000  34.136.254.47  e2-medium     1.33.5-gke.1201000 *  2          RUNNING
+```
+**Finding:** 1 RUNNING GKE cluster with 2 nodes (cost-incurring).
+
