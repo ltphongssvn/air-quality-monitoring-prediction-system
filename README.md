@@ -1191,3 +1191,11 @@ gcloud auth application-default set-quota-project ac215-e115-hw2
 ```
 **Output:** Credentials updated. Kubernetes Engine API not enabled (no GKE clusters).
 
+
+### Step 56: Check Compute Instances
+```bash
+gcloud compute instances list --project=ac215-e115-hw2
+```
+**Output:** Listed 0 items.
+**Finding:** No compute instances.
+
